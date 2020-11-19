@@ -40,9 +40,9 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/store
-    username: store
-    password:
+    url: jdbc:postgresql://localhost:5432/StoreService2
+    username: postgres
+    password: Jose3166
     hikari:
       poolName: Hikari
       auto-commit: false
