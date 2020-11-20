@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { LoginModalService } from 'app/core/login/login-modal.service';
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/user/account.model';
-
+import { ProductCategoryService } from './../entities/product-category/product-category.service';
 @Component({
   selector: 'jhi-home',
   templateUrl: './home.component.html',
@@ -13,11 +13,23 @@ import { Account } from 'app/core/user/account.model';
 export class HomeComponent implements OnInit, OnDestroy {
   account: Account | null = null;
   authSubscription?: Subscription;
+  productCategories: any;
 
-  constructor(private accountService: AccountService, private loginModalService: LoginModalService) {}
+  constructor(
+    private accountService: AccountService,
+    private productCategoryService: ProductCategoryService,
+    private loginModalService: LoginModalService
+  ) {}
 
   ngOnInit(): void {
     this.authSubscription = this.accountService.getAuthenticationState().subscribe(account => (this.account = account));
+    this.loadAll();
+  }
+
+  loadAll(): void {
+    this.productCategoryService.query().subscribe((res: any) => {
+      this.productCategories = res.body || [];
+    });
   }
 
   isAuthenticated(): boolean {

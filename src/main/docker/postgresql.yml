@@ -5,7 +5,7 @@ services:
     # volumes:
     #     - ~/volumes/jhipster/store/postgresql/:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=store
-      - POSTGRES_PASSWORD=
+      - POSTGRES_USER=AdminArqui
+      - POSTGRES_PASSWORD=AdminArqui12345
     ports:
       - 5432:5432

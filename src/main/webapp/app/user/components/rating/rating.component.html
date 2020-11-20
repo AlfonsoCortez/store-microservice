@@ -1,0 +1,14 @@
+<h2>Calificar este producto</h2>
+
+<form [formGroup]="form" (ngSubmit)="updateProduct($event)">
+    <label for="">Puntua de uno a cinco, siendo uno la calificación más baja y cinco la más alta.</label>
+    <select class="form-control" formControlName="rating">
+        <option value="One">  Una estrella  </option>
+        <option value="Two"> Dos estrella </option>
+        <option value="Three">  Tres estrella </option>
+        <option value="Four"> Cuatro estrella  </option>
+        <option value="Five"> Cinco estrella </option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Enviar puntuación</button>
+</form>

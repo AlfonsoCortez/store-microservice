@@ -1,0 +1,17 @@
+<h2>Creando el mensaje</h2>
+
+<form [formGroup]="form" (ngSubmit)="createMessage($event)">
+    <label for="">Escriba su nombre de usuario</label>
+    <input class="form-control" formControlName="nameField">
+
+    <label for="">Fecha de envio</label>
+    <input type="datetime-local" class="form-control" formControlName="date" placeholder="YYYY-MM-DD HH:mm"/>
+
+    <label for="">Escriba su mensaje</label>
+    <input class="form-control" formControlName="messageField">
+
+    <label for="">Fecha</label>
+    <input type="datetime-local" class="form-control" formControlName="sentDate" placeholder="YYYY-MM-DD HH:mm"/>
+
+    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+</form>

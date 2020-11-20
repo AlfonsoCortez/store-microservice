@@ -20,16 +20,29 @@ export class ProductService {
   }
 
   update(product: IProduct): Observable<EntityResponseType> {
+    console.warn('producttttttttttttt');
+    console.warn(product);
     return this.http.put<IProduct>(this.resourceUrl, product, { observe: 'response' });
   }
 
-  find(id: number): Observable<EntityResponseType> {
+  updateProduct(product: IProduct | any): any {
+    console.warn('producttttttttttttt');
+    console.warn(product);
+    console.warn(this.resourceUrl);
+    return this.http.put<any>(`${this.resourceUrl}`, product);
+  }
+
+  find(id: number | string): Observable<EntityResponseType> {
     return this.http.get<IProduct>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 
   query(req?: any): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
     return this.http.get<IProduct[]>(this.resourceUrl, { params: options, observe: 'response' });
+  }
+
+  allProducts(): any {
+    return this.http.get<any[]>(this.resourceUrl);
   }
 
   delete(id: number): Observable<HttpResponse<{}>> {

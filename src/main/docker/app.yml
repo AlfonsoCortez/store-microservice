@@ -11,15 +11,15 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://store-postgresql:5432/store
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     ports:
-      - 8080:8080
+      - 8085:8085
   store-postgresql:
     extends:
       file: postgresql.yml
       service: store-postgresql
-  jhipster-registry:
-    extends:
-      file: jhipster-registry.yml
-      service: jhipster-registry
-    environment:
-      - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_TYPE=native
-      - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_SEARCH_LOCATIONS=file:./central-config/docker-config/
+  # jhipster-registry:
+  #   extends:
+  #     file: jhipster-registry.yml
+  #     service: jhipster-registry
+  #   environment:
+  #     - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_TYPE=native
+  #     - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_SEARCH_LOCATIONS=file:./central-config/docker-config/

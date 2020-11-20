@@ -1,0 +1,46 @@
+<!-- <img [src]="product?.image" alt="" srcset=""> -->
+<img class="image-product" [src]="'data:' + product?.imageContentType + ';base64,' + product?.image" style=" max-width: 45;" alt="product image"/>
+<div class="card-bory">
+    <h5 class="card-title">{{ product?.name }}</h5>
+    <p class="card-text">{{ product?.description}}</p>
+    <p class="card-text">{{ product?.price | currency}}</p>
+    <div [ngSwitch]="product?.recommended" class="container-rating">
+        <div *ngSwitchCase="'One'">
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+        </div>
+        <div *ngSwitchCase="'Two'">
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+        </div>
+        <div *ngSwitchCase="'Three'">
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+        </div>
+        <div *ngSwitchCase="'Four'">
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class=""></fa-icon>
+        </div>
+        <div *ngSwitchCase="'Five'">
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+            <fa-icon [icon]="faStar" class="checked"></fa-icon>
+        </div>
+
+    </div>
+    <a class="btn btn-primary" [routerLink]="['/productlist/producto', product?.id]">Ver detalle</a>
+</div>

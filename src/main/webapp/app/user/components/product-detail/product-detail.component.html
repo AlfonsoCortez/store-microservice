@@ -1,0 +1,56 @@
+<div class="container-product">
+    <div class="container-product-box">
+        <h2>{{product?.name | uppercase}}</h2>
+        <p><b>Precio: </b>{{product?.price | currency}}</p>
+        <p><b>Tamaño: </b>{{product?.size}}</p>
+        <p><b>Categoria: </b>{{product?.productCategory.name}}</p>
+        <div class="container-rating"><b>Calificación: </b>
+            <div [ngSwitch]="product?.recommended" class="container-rating">
+                <div *ngSwitchCase="'One'">
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                </div>
+                <div *ngSwitchCase="'Two'">
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                </div>
+                <div *ngSwitchCase="'Three'">
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                </div>
+                <div *ngSwitchCase="'Four'">
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class=""></fa-icon>
+                </div>
+                <div *ngSwitchCase="'Five'">
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-botton">
+            <a class="btn btn-primary" [routerLink]="['/productlist/producto/rating', product?.id]">Calificar producto</a>
+            <a class="btn btn-primary" [routerLink]="['/productlist/producto/interested', product?.id]">Contactarme</a>
+        </div>
+    </div>
+    <div class="container-product-box">
+        <img [src]="'data:' + product?.imageContentType + ';base64,' + product?.image" alt="product image"/>
+    </div>
+</div>

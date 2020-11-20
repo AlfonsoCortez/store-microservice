@@ -21,3 +21,55 @@ Main page styles
     background-size: contain;
   }
 }
+
+.header {
+  // background-color: #7bed9f;
+  background-image: url('../../content//images/image.jpg');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  width: 100%;
+  height: 350px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header .title-cover {
+  font-size: 2.5em;
+  // color: #ff4757;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: -1px 5px 10px black;
+}
+.container-home h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.header a {
+  background-color: rgb(17, 17, 17);
+  // width: 300px;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.container-categories {
+  // border: 1px solid #000;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-categories p {
+  background-color: rgb(240, 240, 240);
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+
+  display: inline-block;
+  // border: 1px solid #000;
+}
